@@ -7,7 +7,7 @@ const User = ({ user, onRemove, onToggle }) => {
     return () => {
       console.log('컴포넌트가 화면에 사라짐');
     }
-  }, []); // dependency array (deps) 빈 배열을 넣어주면 초기에 한번만 실행, 없으면 매번 실행
+  }, []); // dependency array (deps) 빈 배열을 넣어주면 초기에 mount될 때 한번만 실행, 없으면 매번 실행
 
   // useEffect(() => {
   //   console.log('user값이 설정됨', user);
