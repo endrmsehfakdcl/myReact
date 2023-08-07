@@ -9,6 +9,14 @@ import UserList from './components/UserList';
 import CreateUser from './components/CreateUser';
 import RefLocal from './components/RefLocal';
 import RefLocal2 from './components/RefLocal2';
+import Timer from './components/Timer';
+import { useMemo } from 'react';
+
+function countActiveUsers(users) {
+  console.log('활성 사용자 수를 세는 중...');
+  return users.filter(user => user.active).length;
+}
+
 
 function App() {
 
@@ -83,9 +91,16 @@ function App() {
     )
   }
 
+  const [showTimer, SetShowTimer] = useState(false);
+
+  // const count = countActiveUsers(users);
+  const count = useMemo(() => countActiveUsers(users), [users]);
 
   return (
     <div className="App">
+      {/* {showTimer && <Timer />}
+      <button onClick={() => SetShowTimer(!showTimer)}>Toggle Timer</button> */}
+
       <h1>이메일 CRUD</h1>
       <CreateUser
         username={username}
@@ -97,13 +112,16 @@ function App() {
         users={users}
         onRemove={onRemove}
         onToggle={onToggle} />
+      <div>
+        활성사용자 수 : {count}
+      </div>
 
-      <hr />
+      {/* <hr />
       <RefLocal></RefLocal>
       <hr />
-      <RefLocal2></RefLocal2>
-      
-{/* 
+      <RefLocal2></RefLocal2> */}
+
+      {/* 
       <InputSample />
       <hr />
       <EventHandling></EventHandling>
@@ -117,6 +135,7 @@ function App() {
       <ValidationSample></ValidationSample>
       <hr /> 
 */}
+
 
 
     </div>
