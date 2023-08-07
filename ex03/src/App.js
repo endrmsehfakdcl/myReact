@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
+import LifeCycleExample from "./components/LifeCycleExample";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+class App extends Component {
+  state = { color: 'red' };
+
+  handleClick = () => {
+    this.setState({
+      color: this.state.color === 'red' ? 'blue' : 'red'
+    })
+  }
+
+
+  render() {
+    return (
+      <div>
+        <button
+          onClick={this.handleClick}
+          style={{ color: this.state.color }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          {this.state.color}
+        </button>
+        <LifeCycleExample color={this.state.color}></LifeCycleExample>
+      </div>
+    )
+  }
 }
+
 
 export default App;
