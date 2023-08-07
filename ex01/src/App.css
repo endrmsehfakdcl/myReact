@@ -1,0 +1,14 @@
+.gray-box {
+  background-color: gray;
+  width: 64px;
+  height: 64px;
+}
+
+table,
+td,
+th,
+tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
