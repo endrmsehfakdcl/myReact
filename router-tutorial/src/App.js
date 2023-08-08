@@ -10,6 +10,7 @@ function App() {
       <Route path='/' element={<Home />}></Route>
       <Route path='/about' element={<About />}></Route>
       <Route path='/profiles/:username' element={<Profile />}></Route>
+      {/* <Route path='/profiles/*' element={<Profile />}></Route> */}
     </Routes>
   );
 }
