@@ -14,9 +14,7 @@ const data = {
 
 const Profile = () => {
   const params = useParams();
-  console.log(params);
   const profile = data[params.username];
-  console.log(profile);
   return (
     <div>
       <h1>사용자 프로필</h1>

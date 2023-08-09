@@ -13,6 +13,7 @@ function Home() {
   )
 }
 
+// 초기값
 const contents = [
   {
     id: 1,
@@ -105,9 +106,9 @@ function App() {
         {/* <li><a href="/">Home</a></li>
         <li><a href="/topics">Topics</a></li>
         <li><a href="/contact">Contact</a></li> */}
+        <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/topics">Topics</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
-        <li><NavLink to="/">Home</NavLink></li>
       </ul>
       <Routes>
         <Route path='/' element={<Home />}></Route>
