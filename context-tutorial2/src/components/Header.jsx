@@ -3,8 +3,8 @@ import { ThemeContext } from '../contexts/ThemeContext';
 import { UserContext } from '../contexts/UserContext';
 
 const Header = () => {
-  const { isDark } = useContext(ThemeContext);
-  const user = useContext(UserContext);
+  const { isDark } = useContext(ThemeContext); // isDark = null
+  const user = useContext(UserContext); // user = null
   return (
     <div
       className='header'

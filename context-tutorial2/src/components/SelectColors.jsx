@@ -21,6 +21,7 @@ const SelectColors = () => {
                 onClick={() => actions.setColor(color)}
                 //우클릭 했을 때 커스텀한 동작처리
                 onContextMenu={e => {
+                  // 우클릭 기본동작 prevent
                   e.preventDefault();
                   actions.setSubColor(color);
                 }}
