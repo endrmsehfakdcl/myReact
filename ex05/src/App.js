@@ -5,6 +5,33 @@ import TodoTemplate from './components/TodoTemplate';
 import TodoList from './components/TodoList';
 import TodoInsert from './components/TodoInsert';
 
+const ADD_TODO = "ADD_TODO";
+const REMOVE_TODO = "REMOVE_TODO";
+const TOGGLE_TODO = "TOGGLE_TODO";
+
+function todoReducer(state, action) {
+  switch (action.type) {
+    case ADD_TODO:
+      return [
+        ...state,
+        {
+          id: action.id,
+          text: action.text,
+          checked: false,
+        },
+      ];
+    case REMOVE_TODO:
+      return state.filter((todo) => todo.id !== action.id);
+    case TOGGLE_TODO:
+      return state.map((todo) =>
+        todo.id === action.id ? { ...todo, checked: !todo.checked } : todo
+      );
+    default:
+      return state;
+  }
+}
+
+
 function App() {
   const [number, setNumber] = useState(1);
 
@@ -41,52 +68,49 @@ function App() {
 
   /////////////////////////////////////////////////////////////////////////////////////////////
 
-  const [todos, setTodos] = useState('');
-  const [todoReducer, dispatch] = useReducer(reducer, initState);
-  const initState = ([
+  const [todos, dispatch] = useReducer(todoReducer, [
+    // 초기 상태는 여기에 설정
     {
       id: 1,
-      text: '리액트의 기초 알아보기',
-      checked: true
+      text: "리액트의 기초 알아보기",
+      checked: true,
     },
     {
       id: 2,
-      text: '컴포넌트 스타일링 해보기',
-      checked: true
+      text: "컴포넌트 스타일링 해보기",
+      checked: true,
     },
     {
       id: 3,
-      text: '일정 관리 앱 만들기',
-      checked: true
-    }
+      text: "일정 관리 앱 만들기",
+      checked: true,
+    },
   ]);
+
   const nextId = useRef(4);
 
-  const reducer = (state, action) => {
-    switch(action.type) {
-      case 'onInsert' :
-        return 
-    }
-  }
-//
-  const onInsert = useCallback(text => {
-    const todo = {
+  const onInsert = (text) => {
+    dispatch({
+      type: ADD_TODO,
       id: nextId.current,
-      text, // text: text 인 경우 생략 가능
-      checked: false
-    }
-    setTodos([...todos, todo]); // concat과 동일함, 배열이므로 [] 없으면 타입에러
+      text,
+    });
     nextId.current += 1;
-  }, [todos]); // todos가 변하면 Callback함수 리턴
+  };
 
-  const onRemove = useCallback(id => {
-    setTodos(todos.filter(todo => todo.id !== id))
-  }, [todos]);
+  const onRemove = (id) => {
+    dispatch({
+      type: REMOVE_TODO,
+      id,
+    });
+  };
 
-  const onToggle = useCallback(id => {
-    setTodos(todos.map(todo => todo.id === id ? { ...todo, checked: !todo.checked } : todo))
-  }, [todos]);
-
+  const onToggle = (id) => {
+    dispatch({
+      type: TOGGLE_TODO,
+      id,
+    });
+  };
 
   return (
     <div >
@@ -103,7 +127,7 @@ function App() {
       <UseReducerEx2></UseReducerEx2>
       <hr /> */}
 
-      <TodoTemplate>
+<TodoTemplate>
         <TodoInsert onInsert={onInsert} />
         <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
       </TodoTemplate>
