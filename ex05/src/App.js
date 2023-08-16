@@ -127,7 +127,7 @@ function App() {
       <UseReducerEx2></UseReducerEx2>
       <hr /> */}
 
-<TodoTemplate>
+      <TodoTemplate>
         <TodoInsert onInsert={onInsert} />
         <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
       </TodoTemplate>
