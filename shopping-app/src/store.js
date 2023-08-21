@@ -1,4 +1,3 @@
-import React from 'react'
 import { configureStore, createSlice } from '@reduxjs/toolkit'
 
 const user = createSlice({
@@ -21,19 +20,19 @@ const cart = createSlice({
   initialState: [
     {
       id: 0,
-      name: "White and Black",
+      title: "White and Black",
       imgUrl: "img/shoes1.jpg",
       count: 2
     },
     {
       id: 1,
-      name: "Red Knit",
+      title: "Red Knit",
       imgUrl: "img/shoes2.jpg",
       count: 1
     },
     {
       id: 2,
-      name: "Grey Yordan",
+      title: "Grey Yordan",
       imgUrl: "img/shoes3.jpg",
       count: 1
     }
@@ -62,7 +61,7 @@ const cart = createSlice({
     // 
     deleteItem(state, action) {
       let num = state.findIndex((a) => {
-        return a.id === action.payload;
+        return a.id === action.payload.id;
       });
       state.splice(num, 1);
     },

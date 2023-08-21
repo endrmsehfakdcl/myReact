@@ -1,16 +1,22 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button, Table } from 'react-bootstrap'
-import { addCount, decreaseCount, deleteItem } from '../store';
+import { addCount, decreaseCount, deleteItem, sortName } from '../store';
 
 const Cart = () => {
+  const smallProductStyle = {
+    border: '1px solid #ddd',
+    width: '100px',
+    height: '80px',
+    cursor: 'pointer'
+  }
   const state = useSelector((state) => state);
-  console.log('state: ', state.cart[0].name); //state:  White and Black
+  // console.log('state: ', state.cart[0].title); //state:  White and Black
   const dispatch = useDispatch();
 
   return (
     <div>
-      <h5>{state.user.name} {state.user.age}의 장바구니</h5>
+      <h5 className='p-5'>{state.user.name} {state.user.age}의 장바구니</h5>
 
       <Table>
         <thead>
@@ -26,24 +32,36 @@ const Cart = () => {
           {
             state.cart.map((a, i) =>
               <tr key={i}>
-                <td>{state.cart[i].id + 1}</td>
-                <td><img src={state.cart[i].imgUrl} alt={state.cart[i].name} width='20%' /></td>
-                <td>{state.cart[i].name}</td>
-                <td>{state.cart[i].count}</td>
-                <Button onClick={() => {
-                  dispatch(addCount(state.cart[i].id))
-                }}>+</Button>
-                <Button onClick={() => {
-                  dispatch(decreaseCount(state.cart[i].id))
-                }}>-</Button>
-                <Button onClick={() => {
-                  dispatch(deleteItem(state.cart[i].id))
-                }}>삭제</Button>
+                {/* align-middle bootstrap수직정렬 */}
+                <td className='align-middle'>{state.cart[i].id + 1}</td>
+                <td>
+                  <img
+                    src={state.cart[i].imgUrl}
+                    alt={state.cart[i].title}
+                    style={smallProductStyle} /></td>
+                <td className='align-middle'>{state.cart[i].title}</td>
+                <td className='align-middle'>{state.cart[i].count}</td>
+                <td className='align-middle'>
+                  <Button
+                    onClick={() => { dispatch(addCount(state.cart[i].id)) }}
+                    variant='outline-success'
+                    className='me-2'>+</Button>
+                  <Button
+                    onClick={() => { dispatch(decreaseCount(state.cart[i].id)) }}
+                    variant='outline-warning'
+                    className='me-2'>-</Button>
+                  <Button
+                    onClick={() => { dispatch(deleteItem(state.cart[i].id)) }}
+                    variant='outline-danger'>상품삭제</Button>
+                </td>
               </tr>
             )
           }
         </tbody>
       </Table>
+      <Button variant='outline-primary' onClick={() => {
+        dispatch(sortName(state.cart.Title))
+      }}>이름순정렬</Button>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-.App{
+.App {
   text-align: center;
 }
 
@@ -24,4 +24,13 @@
 
 .c1:hover {
   color: green;
+}
+
+.start {
+  transform: scale(0);
+}
+
+.end {
+  transform: scale(1);
+  transition: all 0.5s;
 }
