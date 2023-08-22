@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import KaKaoLogin from './KakaoLogin'
+import NaverLogin from './NaverLogin'
+import { GoogleLogin } from '@react-oauth/google'
 
 const StyledLoginWrap = styled.div`
   width: 460px;
@@ -150,21 +153,24 @@ const Login = () => {
         </form>
 
         <SnsLoginWrap>
-          <SnsNaverLogin href="/snsNaverLogin">
+          <NaverLogin></NaverLogin>
+          {/* <SnsNaverLogin href="/snsNaverLogin">
             <span>
               네이버 로그인
             </span>
-          </SnsNaverLogin>
-          <SnsKakaoLogin href="/snsKakaoLogin">
+          </SnsNaverLogin> */}
+          <KaKaoLogin></KaKaoLogin>
+          {/* <SnsKakaoLogin href="/snsKakaoLogin">
             <span>
               카카오 로그인
             </span>
-          </SnsKakaoLogin>
-          <SnsGoogleLogin href="/snsGoogleLogin">
+          </SnsKakaoLogin> */}
+          <GoogleLogin></GoogleLogin>
+          {/* <SnsGoogleLogin href="/snsGoogleLogin">
             <span>
               구글 로그인
             </span>
-          </SnsGoogleLogin>
+          </SnsGoogleLogin> */}
         </SnsLoginWrap>
 
         <StyledHelp>
