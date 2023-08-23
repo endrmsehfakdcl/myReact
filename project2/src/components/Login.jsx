@@ -80,25 +80,27 @@ const SnsLoginWrap = styled.div`
     grid-template-columns: 215px 215px;
 	  grid-template-rows: 50px 50px;
   `
-const SnsNaverLogin = styled.a`
+const SnsLoginNaver = styled.div`
     width: 208px;
     height: 43px;
     background-color: #279c00;
     color: white;
     text-decoration: none;
     font-size: 15px;
+    border: none;
   `
 
-const SnsKakaoLogin = styled.a`
+const SnsLoginKakao = styled.div`
     width: 208px;
     height: 43px;
     background-color: #ffde00;
     color: #3b1e1e;
     text-decoration: none;
     font-size: 15px;
+    border: none;
   `
 
-const SnsGoogleLogin = styled.a`
+const SnsLoginGoogle = styled.div`
     width: 208px;
     height: 43px;
     border: 1px solid #ccc;
@@ -153,13 +155,13 @@ const Login = () => {
         </form>
 
         <SnsLoginWrap>
-          <NaverLogin></NaverLogin>
+          <SnsLoginNaver><NaverLogin></NaverLogin></SnsLoginNaver>
           {/* <SnsNaverLogin href="/snsNaverLogin">
             <span>
               네이버 로그인
             </span>
           </SnsNaverLogin> */}
-          <KaKaoLogin></KaKaoLogin>
+          <SnsLoginKakao><KaKaoLogin></KaKaoLogin></SnsLoginKakao>
           {/* <SnsKakaoLogin href="/snsKakaoLogin">
             <span>
               카카오 로그인

@@ -8,15 +8,17 @@ import Login from './components/Login';
 
 //@react-oauth/google
 //axios
+//styled-components
+//react-router-dom
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
-      <Login></Login>
+      {/* <Login></Login> */}
       {/* <AccountCreate></AccountCreate> */}
       {/* <AccountTerm></AccountTerm> */}
-      {/* <AccountForm></AccountForm> */}
+      <AccountForm></AccountForm>
       <Footer></Footer>
     </div>
   );

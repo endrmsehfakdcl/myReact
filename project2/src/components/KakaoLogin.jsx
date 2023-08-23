@@ -1,5 +1,14 @@
 import styled from 'styled-components'
 
+/*width: 208px;
+    height: 43px;
+    background-color: #ffde00;
+    color: #3b1e1e;
+    text-decoration: none;
+    font-size: 15px;
+    border: none;
+    */
+
 const KaKaoLogin = () => {
     const REST_API_KEY = '98fb1054fadbc801e5b9337e8492549d'
     const REDIRECT_URL = 'https://localhost:3000/auth'
@@ -12,13 +21,14 @@ const KaKaoLogin = () => {
     // console.log(code);
 
     const Button = styled.button`
-    width: 208px;
-    height: 43px;
+    width: 100%;
+    height: 100%;
     background-color: #ffde00;
     color: #3b1e1e;
     text-decoration: none;
     font-size: 15px;
     border: none;
+    border-radius: 4px;
     `
 
     return (

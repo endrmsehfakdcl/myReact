@@ -1,5 +1,14 @@
 import styled from 'styled-components'
 
+/*  width: 208px;
+    height: 43px;
+    background-color: #279c00;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    border: none;
+     */
+
 const NaverLogin = () => {
     const CLIENT_ID = '71f8YZyRKEl1IY5p4qFL'
     const CALLBACK_URL = 'http://localhost:3000/naverLogin'
@@ -13,13 +22,14 @@ const NaverLogin = () => {
     // console.log(code);
 
     const Button = styled.button`
-    width: 208px;
-    height: 43px;
+    width: 100%;
+    height: 100%;
     background-color: #279c00;
     color: white;
     text-decoration: none;
     font-size: 15px;
     border: none;
+    border-radius: 4px;
     `
 
     return (
