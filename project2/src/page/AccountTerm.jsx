@@ -1,5 +1,5 @@
 import React from 'react'
-import './AccountTerm.css'
+import '../components/AccountTerm.css'
 
 const AccountTerm = () => {
   return (

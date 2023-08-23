@@ -136,7 +136,7 @@ function Header() {
         </StyledSearch>
         <StyledHeaderTopUserMenu className="header_userMenu">
           <StyledA href="/login">로그인</StyledA>
-          <StyledA href="/signup">회원가입</StyledA>
+          <StyledA href="/account-create">회원가입</StyledA>
           <StyledA href="/mypage">마이페이지</StyledA>
           <StyledA href="/reservation">예약확인/취소</StyledA>
         </StyledHeaderTopUserMenu>

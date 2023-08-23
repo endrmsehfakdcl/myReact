@@ -1,5 +1,5 @@
 import React from 'react'
-import './AccountForm.css'
+import '../components/AccountForm.css'
 
 const AccountForm = () => {
   return (

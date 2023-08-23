@@ -1,8 +1,9 @@
 import React from 'react'
-import './AccountCreate.css'
-import NaverLogin from './NaverLogin'
-import KakaoLogin from './KakaoLogin'
+import '../components/AccountCreate.css'
+import KakaoLogin from '../components/KakaoLogin'
+import NaverLogin from '../components/NaverLogin'
 import { GoogleLogin } from '@react-oauth/google'
+import { Link } from 'react-router-dom'
 
 const AccountCreate = () => {
   return (
@@ -11,7 +12,9 @@ const AccountCreate = () => {
         <div className='joinBlock'>
           <h2 className='title'>기분최고조 회원가입</h2>
           <p className='text'>지금 회원가입 하신 후 다양한 서비스를 경험해보세요</p>
-          <button type='button' className='IMBtn'>개인 회원가입</button>
+          <button type='button' className='IMBtn' onClick={() => {
+            window.location.href = '/account-term';
+          }}>개인 회원가입</button>
           <div className='snsLoginDiv'>
             <ul className='snsLoginUl'>
               <li className='snsLoginli'>

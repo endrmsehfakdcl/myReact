@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import KaKaoLogin from './KakaoLogin'
-import NaverLogin from './NaverLogin'
+import KaKaoLogin from '../components/KakaoLogin'
+import NaverLogin from '../components/NaverLogin'
+// import GoogleLogin from '../components/GoogleLogin'
 import { GoogleLogin } from '@react-oauth/google'
 
 const StyledLoginWrap = styled.div`

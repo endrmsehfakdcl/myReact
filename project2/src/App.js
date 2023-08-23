@@ -1,10 +1,11 @@
 import './App.css';
-import AccountCreate from './components/AccountCreate';
-import AccountForm from './components/AccountForm';
-import AccountTerm from './components/AccountTerm';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Login from './components/Login';
+import AccountCreate from './page/AccountCreate';
+import AccountForm from './page/AccountForm';
+import AccountTerm from './page/AccountTerm';
+import Footer from './page/Footer';
+import Header from './page/Header';
+import Login from './page/Login';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 //@react-oauth/google
 //axios
@@ -13,14 +14,18 @@ import Login from './components/Login';
 
 function App() {
   return (
-    <div className="App">
-      <Header></Header>
-      {/* <Login></Login> */}
-      {/* <AccountCreate></AccountCreate> */}
-      {/* <AccountTerm></AccountTerm> */}
-      <AccountForm></AccountForm>
-      <Footer></Footer>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header></Header>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/account-create" element={<AccountCreate />} />
+          <Route path="/account-term" element={<AccountTerm />} />
+          <Route path="/account-form" element={<AccountForm />} />
+        </Routes>
+        <Footer></Footer>
+      </div>
+    </BrowserRouter>
   );
 }
 
