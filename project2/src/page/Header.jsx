@@ -1,6 +1,107 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
 
+
+const StyledHeader = styled.header`
+background-color: white;
+color: black;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+`
+const StyledHeaderTop = styled.div`
+display: flex;
+justify-content: space-between;
+height: 100px;
+align-items: center;
+width: 80%;
+`
+
+const StyledSearchWrap = styled.div`
+width: 736px;
+height: 50px;
+`
+
+const StyledSearch = styled.div`
+display: flex;
+width: 450px;
+height: 50px;
+padding: 5px;
+border: 1px solid rgba(0,0,0,.08);
+border-radius: 25px;
+margin-right: 10px;
+`
+const StyledLogo = styled.div`
+width: 195px;
+height: 38px;
+`
+
+const StyledInput = styled.input`
+display: flex;
+align-items: center;
+border: none;
+color: #111;
+margin-left: 2px;
+margin-top: 15px;
+width: 400px;
+height: 20px;
+padding: 0px;
+`
+
+const StyledButton = styled.button`
+width: 50px;
+height: 50px;
+border: none;
+border-radius: 25px;
+`
+
+const StyledHeaderTopUserMenu = styled.div`
+display: flex;
+justify-content: flex-end;
+gap: 20px;
+`
+
+const StyledA = styled.a`
+text-decoration: none;
+color: #111;
+cursor: pointer;
+`
+const StyledARanking = styled.a`
+display: flex;
+justify: space-between;
+text-decoration: none;
+color: #8e43e7;
+cursor: pointer;
+`
+
+const StyledHeaderBottom = styled.div`
+display: flex;
+width: 80%;
+margin: 10px 0;
+font-s
+`
+
+const StyledCategory = styled.div`
+display: flex;
+gap: 20px;
+`
+
+const StyledVerticalDivider = styled.div`
+border-left: 1px solid black;
+height: 21px;
+margin: 0 10px;
+`
+
+const StyledHeaderRanking = styled.div`
+color: #8e43e7;
+`
+const StyledHorizontalDivider = styled.div`
+border-bottom: 1px solid black;
+width: 100%
+`
+
+
 function Header() {
   const [searchText, setSearchText] = useState('');
 
@@ -13,105 +114,6 @@ function Header() {
       handleSearchClick();
     }
   };
-
-  const StyledHeader = styled.header`
-    background-color: white;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  `
-  const StyledHeaderTop = styled.div`
-    display: flex;
-    justify-content: space-between;
-    height: 100px;
-    align-items: center;
-    width: 80%;
-  `
-
-  const StyledSearchWrap = styled.div`
-    width: 736px;
-    height: 50px;
-  `
-
-  const StyledSearch = styled.div`
-    display: flex;
-    width: 450px;
-    height: 50px;
-    padding: 5px;
-    border: 1px solid rgba(0,0,0,.08);
-    border-radius: 25px;
-    margin-right: 10px;
-  `
-  const StyledLogo = styled.div`
-    width: 195px;
-    height: 38px;
-  `
-
-  const StyledInput = styled.input`
-    display: flex;
-    align-items: center;
-    border: none;
-    color: #111;
-    margin-left: 2px;
-    margin-top: 15px;
-    width: 400px;
-    height: 20px;
-    padding: 0px;
-  `
-
-  const StyledButton = styled.button`
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 25px;
-  `
-
-  const StyledHeaderTopUserMenu = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
-  `
-
-  const StyledA = styled.a`
-    text-decoration: none;
-    color: #111;
-    cursor: pointer;
-  `
-  const StyledARanking = styled.a`
-    display: flex;
-    justify: space-between;
-    text-decoration: none;
-    color: #8e43e7;
-    cursor: pointer;
-`
-
-  const StyledHeaderBottom = styled.div`
-    display: flex;
-    width: 80%;
-    margin: 10px 0;
-    font-s
-  `
-
-  const StyledCategory = styled.div`
-  display: flex;
-  gap: 20px;
-  `
-
-  const StyledVerticalDivider = styled.div`
-    border-left: 1px solid black;
-    height: 21px;
-    margin: 0 10px;
-  `
-
-  const StyledHeaderRanking = styled.div`
-    color: #8e43e7;
-  `
-  const StyledHorizontalDivider = styled.div`
-    border-bottom: 1px solid black;
-    width: 100%
-  `
 
 
   return (
