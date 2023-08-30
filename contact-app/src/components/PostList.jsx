@@ -23,7 +23,7 @@ const PostList = () => {
 
   useEffect(() => { callAPI(); }, [callAPI]);
 
-  if (loading) return <h1 className="my-5 text-center">로딩 중 ......</h1>
+  if (loading) { return <h1 className="my-5 text-center">로딩 중 ......</h1>; }
 
   return (
     <div>
