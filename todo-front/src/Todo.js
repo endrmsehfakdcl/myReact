@@ -1,4 +1,4 @@
-import { CheckBoxOutlineBlank, DeleteOutline } from '@mui/icons-material';
+import { DeleteOutline } from '@mui/icons-material';
 import { Checkbox, IconButton, InputBase, ListItem, ListItemSecondaryAction, ListItemText } from '@mui/material';
 import React, { useState } from 'react'
 
@@ -11,23 +11,23 @@ const Todo = (props) => {
   // checkboxEventHandler
   const checkboxEventHandler = (e) => {
     item.done = e.target.checked;
-    editItem();
+    editItem(item);
   }
 
   // toggle
-  const turnOffReadOnly = (e) => {
+  const turnOffReadOnly = () => {
     setReadOnly(false);
   }
 
   const turnOnReadOnly = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && readOnly === false) {
       setReadOnly(true);
+      editItem(item);
     }
   }
 
   const editEventHandler = (e) => {
-    item.title = e.target.value;
-    editItem();
+    setItem({...item, title: e.target.value});
   }
 
   const deleteEventHandler = (e) => {
@@ -42,7 +42,7 @@ const Todo = (props) => {
       />
       <ListItemText>
         <InputBase
-          inputProps={{ "aria-label": "naked", readOnly: readOnly }}
+          inputProps={{ "aria-label": "naked", readOnly: item.done ? true : readOnly }}
           onClick={turnOffReadOnly}
           onKeyDown={turnOnReadOnly}
           onChange={editEventHandler}
